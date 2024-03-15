@@ -53,23 +53,23 @@ class Employee {
     }
     
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         Employee emp = new Employee();
 
         System.out.print("Enter Employee ID: ");
-        int empID = scanner.nextInt();
+        int empID = sc.nextInt();
         emp.setEmpID(empID);
 
         System.out.print("Enter Employee Name: ");
-        String empName = scanner.next();
+        String empName = sc.next();
         emp.setEmpName(empName);
 
         System.out.print("Enter No. of Hours Worked: ");
-        double hoursWorked = scanner.nextDouble();
+        double hoursWorked = sc.nextDouble();
         emp.setNoOfHoursWorked(hoursWorked);
 
         System.out.print("Enter Hourly Price: ");
-        double hourlyPrice = scanner.nextDouble();
+        double hourlyPrice = sc.nextDouble();
         emp.setHourlyPrice(hourlyPrice);
 
         System.out.println("\nEmployee Details:");
