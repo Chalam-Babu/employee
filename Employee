@@ -1,87 +1,96 @@
 import java.util.Scanner;
 
-class Employee {
-    private int empID;
-    private String empName;
-    private double noOfHoursWorked;
-    private double hourlyPrice;
 
-    public void setEmpID(int x) {
-        empID = x;
+class Employee{
+    
+    private int empid;
+    private String ename;
+    private double numberOfHoursWorked;
+    private double payForHour;
+    private double grossSalary;
+    
+    public void setempid(int x){
+        empid = x;
     }
-
-    public int getEmpID() {
-        return empID;
+    
+    public int getempid(){
+        return empid;
     }
-
-    public void setEmpName(String y) {
-        empName = y;
+    
+    
+    public void setename(String y){
+        ename = y;
+        
     }
-
-    public String getEmpName() {
-        return empName;
+    public String getename(){
+        return ename;
+        
     }
-
-    public void setNoOfHoursWorked(double z) {
-        noOfHoursWorked = z;
+    
+    
+    public void setnunberofhoursworked(double z){
+        numberOfHoursWorked = z;
     }
-
-    public double getNoOfHoursWorked() {
-        return noOfHoursWorked;
+    
+    public double getnunberofhoursworked(){
+        return numberOfHoursWorked;
     }
-
-    public void setHourlyPrice(double a) {
-        hourlyPrice = a;
+    
+    public void setpayForHour(double pay){
+        payForHour = pay;
     }
-
-    public double getHourlyPrice() {
-        return hourlyPrice;
+    
+    public double getpayForHour(){
+        return payForHour;
     }
-
-    public double getGrossSalary() {
-        return noOfHoursWorked * hourlyPrice;
+    
+    public void setgrossSalary(double salary){
+        grossSalary = salary;
     }
-
-    public double getNetSalary() {
-        double grossSalary = getGrossSalary();
-        double tax = 0.05 * grossSalary;
-        if (grossSalary > 30000) {
-            return grossSalary - tax;
-        } else {
+    
+    public double getgrossSalary(){
+        if (numberOfHoursWorked*payForHour >= 30000 ){
+            grossSalary = ((numberOfHoursWorked*payForHour)- (((numberOfHoursWorked * payForHour) * 0.05)));
+            
+            return grossSalary;
+        }
+        else{
+            grossSalary = numberOfHoursWorked*payForHour;
+            
             return grossSalary;
         }
     }
     
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        Employee emp = new Employee();
-
+    public static void main(String [] args){
+        Scanner ck = new Scanner(System.in);
+        Employee e1 = new Employee();
+        
         System.out.print("Enter Employee ID: ");
-        int empID = sc.nextInt();
-        emp.setEmpID(empID);
-
-        System.out.print("Enter Employee Name: ");
-        String empName = sc.next();
-        emp.setEmpName(empName);
-
-        System.out.print("Enter No. of Hours Worked: ");
-        double hoursWorked = sc.nextDouble();
-        emp.setNoOfHoursWorked(hoursWorked);
-
-        System.out.print("Enter Hourly Price: ");
-        double hourlyPrice = sc.nextDouble();
-        emp.setHourlyPrice(hourlyPrice);
-
-        System.out.println("\nEmployee Details:");
-        System.out.println("Employee ID: " + emp.getEmpID());
-        System.out.println("Employee Name: " + emp.getEmpName());
-        System.out.println("No. of Hours Worked: " + emp.getNoOfHoursWorked());
-        System.out.println("Hourly Price: " + emp.getHourlyPrice());
-        System.out.println("Gross Salary: " + emp.getGrossSalary());
-        System.out.println("Net Salary: " + emp.getNetSalary());
-
-        scanner.close();
+        int empid = ck.nextInt();
+        e1.setempid(empid);
+        
+        System.out.print("Enter Employee name: ");
+        String ename =ck.next();
+        e1.setename(ename);
+        
+        System.out.print("Enter Employee working hours: ");
+        double numberOfHoursWorked = ck.nextDouble();
+        e1.setnunberofhoursworked(numberOfHoursWorked);
+        
+        System.out.print("Enter Employee pay for hour : ");
+        double payForHour = ck.nextDouble();
+        e1.setpayForHour(payForHour);
+        
+        
+        
+        System.out.println(e1.empid);
+        System.out.println(e1.ename);
+        System.out.println(e1.numberOfHoursWorked);
+        System.out.println(e1.payForHour);
+        System.out.println(e1.getgrossSalary());
+        
+        
+        
+        
     }
 }
-
-
