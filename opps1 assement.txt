@@ -1,0 +1,143 @@
+1)create Student class with sid,sname, marks data members and input() method for input details and output() method to print details?
+
+-----------------------------------------------------------------
+import java.util.Scanner;
+class student{
+    int StudentId;
+    String StudentName;
+    int StudentMarks;
+    
+    
+    void input(){
+        Scanner cherry = new Scanner(System.in);
+        System.out.println("enter ID : ");
+        StudentId = cherry.nextInt();
+        
+        System.out.println("enter Name : ");
+        StudentName = cherry.next();
+        
+        System.out.println("enter Marks : ");
+        StudentMarks = cherry.nextInt();
+        
+    }
+    
+    public void output(){
+        System.out.println("Id : "  +  StudentId);
+        
+        System.out.println("Name : "  + StudentName);
+        
+        System.out.println("Marks : " + StudentMarks);
+        
+    }
+
+public static void main(String[] args) {
+        Student s1 = new Student();
+        s1.input();
+        s1.output();
+    }
+
+}
+------------------------------------------------------
+java -cp /tmp/BPthVUtv5X/student
+enter ID : 
+501
+enter Name : 
+cherry
+enter Marks : 
+520
+Id : 501
+Name : cherry
+Marks : 520
+
+=== Code Execution Successful ===
+
+----------------------------------------------------------
+----------------------------------------------------------
+
+
+
+
+
+
+
+
+2)// Bankcustomer class with acno,atype,amt fields using constructor overloading?
+
+//--------------------------------------------------------------------
+
+class BankCustomer{
+    int Acno;
+    String Atype;
+    int Amt;
+    
+    
+    BankCustomer(int x, String y, int z){
+        Acno = x;
+        Atype = y;
+        Amt = z;
+        
+    }
+    
+    void display(){
+        System.out.println("Account Number: " + Acno + ", Account Type: " + Atype + ", Amount: " + Amt);
+    }
+    
+    public static void main(String[] args) {
+        BankCustomer b1 = new BankCustomer(55221, "salary", 50000);
+        b1.display();
+    }
+    
+}
+
+//----------------------------------------------------------------
+java -cp /tmp/VcE575RLTJ/BankCustomer
+Account Number: 55221, Account Type: salary, Amount: 50000
+
+=== Code Execution Successful ===
+///-----------------------------------------------------------
+-------------------------------------------------------------------
+
+
+
+
+
+
+3)Make a program  with static member,static method?
+
+
+---------------------------------------------------------------
+\
+import java.util.Scanner;
+class main{
+    static String name;
+    static String status;
+    static String village = "Chilakapadu";
+    
+    
+    static void display(){
+        Scanner cherry = new Scanner(System.in);
+        System.out.println("name : ");
+        name = cherry.next();
+        System.out.println("status : ");
+        status = cherry.next();
+        
+        System.out.println("name : " + name + " Status : " + status + " Village : " + village);
+    }
+    
+    public static void main(String []args){
+        main b1 = new main();
+        b1.display();
+    }
+}
+
+---------------------------------------------
+java -cp /tmp/JrCxmMPnbZ/main
+name : 
+cherry
+status : 
+single
+name : cherry Status : single Village : Chilakapadu
+
+=== Code Execution Successful ===
+---------------------------------------------------------
+
